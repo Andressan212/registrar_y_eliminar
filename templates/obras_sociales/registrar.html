@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Obra Social</title>
+    <link rel="stylesheet" href="{% static 'obras_sociales/style.css' %}">
+</head>
+<body>
+    <h1>Registrar Nueva Obra Social</h1>
+    <form method="post" action="{% url 'registrar_obra_social' %}">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <label for="codigo">Código:</label>
+        <input type="text" name="codigo" id="codigo" required>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

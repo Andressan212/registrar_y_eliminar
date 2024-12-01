@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Obras Sociales</title>
+    <link rel="stylesheet" href="{% static 'obras_sociales/style.css' %}">
+</head>
+<body>
+    <h1>Lista de Obras Sociales</h1>
+    <a href="{% url 'registrar_obra_social' %}">Registrar Nueva Obra Social</a>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Código</th>
+            <th>Acciones</th>
+        </tr>
+        {% for obra in obras %}
+        <tr>
+            <td>{{ obra.nombre }}</td>
+            <td>{{ obra.codigo }}</td>
+            <td>
+                <a href="{% url 'eliminar_obra_social' obra.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
